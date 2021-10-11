@@ -9,21 +9,20 @@
 -- ORDER BY ....
 
 --Inner Join(table.name)
-SELECT student_name, class_name
-FROM student
-INNER JOIN class
-ON class.class_id = student.class_id
-WHERE class.class_id = 1;
+SELECT c.FirstName, c.LastName, i.InvoiceId
+From customers c
+LEFT JOIN invoices i 
+ON c.Customerid = i.Customerid
+WHERE i.InvoiceId is NULL
 
---EXAMPLE(key should not be selected !! key can be T1=T2, T2=T3)
-SELECT tracks.unitPrice, albums.title, artists.name
-FROM Tracks
-INNER JOIN albums
-ON tracks.albumid = albums.albumid
-INNER JOIN artists
-ON albums.artistid = artists.artistid
-Where artists.name = "Audioslave";
-
+--multi inner join EXAMPLE(key should not be selected !! key can be T1=T2, T2=T3)
+SELECT t.unitPrice, al.title, ar.name
+FROM Tracks t
+INNER JOIN albums al
+ON t.albumid = al.albumid
+INNER JOIN artists ar
+ON al.artistid = ar.artistid
+Where ar.name = "Audioslave";
 
 --Self Join(由兩個表，方便找出ANS)
 SELECT column_name(s)
