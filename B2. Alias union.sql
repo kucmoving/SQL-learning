@@ -15,3 +15,12 @@ WHERE gender = 'male'
 UNION
 ORDER BY name
 
+--example(Use a UNION to create a list of all the employee's and customer's first names and last names ordered by the last name in descending order.)
+SELECT c.lastname
+FROM customers c
+UNION
+SELECT e.lastname
+FROM employees e
+
+ORDER BY c.lastname DESC
+
