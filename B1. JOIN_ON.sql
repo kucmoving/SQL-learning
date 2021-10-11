@@ -15,6 +15,16 @@ INNER JOIN class
 ON class.class_id = student.class_id
 WHERE class.class_id = 1;
 
+--EXAMPLE(key should not be selected !! key can be T1=T2, T2=T3)
+SELECT tracks.unitPrice, albums.title, artists.name
+FROM Tracks
+INNER JOIN albums
+ON tracks.albumid = albums.albumid
+INNER JOIN artists
+ON albums.artistid = artists.artistid
+Where artists.name = "Audioslave";
+
+
 --Self Join(由兩個表，方便找出ANS)
 SELECT column_name(s)
 FROM table a, table b
