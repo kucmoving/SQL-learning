@@ -44,10 +44,6 @@ FULL OUTER JOIN class
 ON class.class_id = student.class_id
 ORDER BY student_name;
 
--- Cartesian(Cross) Join Example
---29 ** 77 = 2233
---not frequently used
-SELECT product_name
-,unit_price
-,company_name
-FROM suppliers CROSS JOIN products;
+-- EXAMPLE How many records are created when you apply a Cartesian join to the invoice and invoice items table? 
+SELECT COUNT(*) AS TotalRecords 
+FROM Invoices cross JOIN invoice_items 
