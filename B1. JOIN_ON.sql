@@ -38,11 +38,11 @@ ON class.class_id = student.class_id
 ORDER BY student_name;
 
 --Full Outer Join
-SELECT student_name, class_name
-FROM table student
-FULL OUTER JOIN class
-ON class.class_id = student.class_id
-ORDER BY student_name;
+SELECT c.firstname, c.lastname, c.city, i.billingcity
+FROM customers c
+INNER JOIN invoices i
+ON c.customerid = i.customerid
+WHERE c.city != i.billingcity
 
 -- EXAMPLE How many records are created when you apply a Cartesian join to the invoice and invoice items table? 
 SELECT COUNT(*) AS TotalRecords 
