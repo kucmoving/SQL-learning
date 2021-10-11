@@ -31,11 +31,11 @@ INNER JOIN employees m
 ON e.reportsTo = m.employeeID
 
 --Left Join
-SELECT student_name, class_name
-FROM table student
-LEFT JOIN class
-ON class.class_id = student.class_id
-ORDER BY student_name;
+SELECT ar.name, ar.artistid, al.albumid
+FROM artists ar
+LEFT JOIN albums al
+ON ar.artistid = al.artistid
+WHERE al.albumid is null
 
 --Full Outer Join
 SELECT c.firstname, c.lastname, c.city, i.billingcity
