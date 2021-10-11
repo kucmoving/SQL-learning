@@ -23,4 +23,11 @@ WHERE cust_id IN
         FROM OrderItems
         WHERE prod_name = 'Toothbrush');
 
--- subqueries for calclations
+--EXAMPLE
+/* How many albums does the artist Led Zepplin have? */
+SELECT COUNT(a.Albumid)
+FROM albums a
+WHERE a.artistid in (SELECT
+r.artistid
+       FROM artists r
+       WHERE r.name = 'Led Zeppelin' );
