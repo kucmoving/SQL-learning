@@ -25,10 +25,10 @@ ON al.artistid = ar.artistid
 Where ar.name = "Audioslave";
 
 --Self Join(由兩個表，方便找出ANS)
-SELECT column_name(s)
-FROM table a, table b
-WHERE condition;
-ORDER BY condition;
+SELECT M.LastName AS Manager, 
+       E.LastName AS Employee
+FROM Employees E INNER JOIN Employees M 
+ON E.ReportsTo = M.EmployeeID
 
 --Left Join
 SELECT student_name, class_name
